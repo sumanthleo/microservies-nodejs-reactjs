@@ -1,14 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import useLongPollingHook from './customHook';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Admins from './Admins';
 
 function App() {
   const {data , error} = useLongPollingHook('http://localhost:8002/')
-  
+  const [count , setCount] = useState(0)
   useEffect(() => {
     console.log(data)
+    setCount(()=> count+1)
   } , [data])
 
   return (
@@ -25,7 +26,9 @@ function App() {
           }}>{x.title}</p>
         ))
       }
+
       </div>
+      <p>{count}</p>
 <div>
   <Admins></Admins>
 </div>

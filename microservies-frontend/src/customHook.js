@@ -17,8 +17,8 @@ const useLongPollingHook = (url, delay = 9000) => {
   };
   useEffect(() => {
     let timeoutId;
-    const startPolling = async () => {
-      await fetchApi();
+    const startPolling = () => {
+      fetchApi();
     };
     startPolling();
     timeoutId = setInterval(startPolling, delay);

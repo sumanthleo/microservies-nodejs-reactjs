@@ -21,5 +21,5 @@ app.get('/' , getAllProducts)
 
 connection();
 app.listen(8002 , () => {
-    console.log(`users server is running on 8002`)
+    console.log(`Products server is running on 8002`)
 })

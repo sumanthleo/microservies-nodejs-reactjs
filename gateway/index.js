@@ -10,9 +10,9 @@ app.use(express.json())
 app.get('/' , (req , res) => {
     res.json("hello from gateway")
 })
-app.use('/users' , proxy('http://localhost:8001'))
+// app.use('/users' , proxy('http://localhost:8001'))
 app.use('/products' , proxy('http://localhost:8002'))
-app.use('/admin' , proxy('http://localhost:5000'))
+// app.use('/admin' , proxy('http://localhost:5000'))
 
 
 app.listen(8000 , () => {
