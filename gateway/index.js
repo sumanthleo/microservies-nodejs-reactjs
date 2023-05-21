@@ -10,7 +10,7 @@ app.use(express.json())
 app.get('/' , (req , res) => {
     res.json("hello from gateway")
 })
-app.use('/users' , proxy('https://microservices-products.onrender.com'))
+app.use('/users' , proxy('https://microservices-users.onrender.com'))
 app.use('/products' , proxy('https://microservices-products.onrender.com'))
 // app.use('/admin' , proxy('http://localhost:5000'))
 
